@@ -1,0 +1,21 @@
+<p-dialog header="Adauga un nou angajat" [(visible)]="displayDialog" [modal]="true" [responsive]="true" [style]="{'width':'350px'}" [contentStyle]="{'border': '1px solid', 'border-radius': '5px'}">
+    <form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+        <div class="p-grid p-fluid">
+            <div class="p-col-12">
+                <p-inputText placeholder="Nume Complet" formControlName="firstName" required></p-inputText>
+            </div>
+            <div class="p-col-12">
+                <p-inputText placeholder="Pozitie" formControlName="position" required></p-inputText>
+            </div>
+            <div class="p-col-12">
+                <p-inputText placeholder="Email" formControlName="email" required></p-inputText>
+            </div>
+        </div>
+        <div class="p-grid p-fluid">
+            <div class="p-col-12">
+                <button pButton type="button" label="Cancel" [icon]="'pi pi-times'" (click)="closeDialog()"></button>
+                <button pButton type="submit" [label]="data ? 'Update' : 'Save'" [icon]="'pi pi-check'" [class]="'ui-button-success'"></button>
+            </div>
+        </div>
+    </form>
+</p-dialog>
